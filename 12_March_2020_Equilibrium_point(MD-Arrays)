@@ -1,0 +1,46 @@
+https://practice.geeksforgeeks.org/problems/equilibrium-point/0/?track=md-arrays&batchId=144#ExpectOP
+c++
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+		int t;
+	    cin>>t;
+		while(t-->0)
+		{
+		    int n;
+		    cin>>n;
+		    float msum=0,lsum=0;
+		    int epoint=0;
+		    float arr[n+1];
+		    for(int i=0;i<n;i++)
+		    {
+		       cin>>arr[i];
+		        msum+=arr[i];
+		    }
+		    for(int i=0;i<n;i++)
+		    {
+		        lsum +=arr[i];
+		        if( ( (msum-arr[i])/2 ) == lsum-arr[i] )
+		        {
+		            epoint = i+1;
+		            break;
+		        }
+		        else if(  ( (msum-arr[i])/2 ) < lsum-arr[i]  )
+		        {
+		            epoint =0;
+		            break;
+		        }
+		        
+		    }
+		    if(epoint!=0)
+		        cout<<epoint<<"\n";
+		    else
+		        cout<<"-1"<<"\n";
+		}
+		
+		
+	
+	return 0;
+}
